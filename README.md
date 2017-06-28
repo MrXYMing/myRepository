@@ -27,4 +27,4 @@
 
 *这里将会记录一些碰到bug、兼容性问题、小技巧等内容*
 
-- [index](docs/essay/index.md)
+- [抓耳挠腮、提心吊胆之痛的领悟](docs/essay/index.md)
