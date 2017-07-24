@@ -1,0 +1,25 @@
+{
+  "name": "myrepository",
+  "version": "1.0.0",
+  "description": "随笔",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrXYMing/myRepository.git"
+  },
+  "keywords": [
+    "9394"
+  ],
+  "author": "ming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrXYMing/myRepository/issues"
+  },
+  "homepage": "https://github.com/MrXYMing/myRepository#readme"
+}
