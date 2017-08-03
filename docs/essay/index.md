@@ -7,3 +7,20 @@
 - 解决：
     1. 预先加载；
     2. 将hover前后两张图片做成一张，靠`background-position`来控制图片位置 
+
+---
+
+#### Git用户名邮箱的全局配置和但仓库配置
+[链接](http://blog.csdn.net/u011535508/article/details/53056976)
+
+- 全局：
+    - $git config --global user.name "xxxx"
+    - $git config --global user.email "xxxx@xx.com"
+    - $git config --list
+
+- 单仓库：
+    - $git config user.name "gitlab's Name"
+    - $git config user.email "gitbal@xx.com"
+    - $git config --list
+
+*git config --list 查看当前配置，在当前项目下查看的配置是全局配置+当前项目的配置，使用的时候会优先使用当前项目的配置*
