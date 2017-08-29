@@ -15,6 +15,8 @@
 
 #### 3. TypeScript
 
+- [ts手册指南](docs/notes/TypeScript/手册指南.md)
+
 ---
 
 ### 测试demo
@@ -27,4 +29,6 @@
 
 *这里将会记录一些碰到bug、兼容性问题、小技巧等内容*
 
-- [抓耳挠腮、提心吊胆之痛的领悟](docs/essay/index.md)
+- [抓耳挠腮、提心吊胆之痛的领悟](docs/essay/bug.md)
+
+- [阁下何不同风起，扶摇直上九万里](docs/essay/skill.md)
