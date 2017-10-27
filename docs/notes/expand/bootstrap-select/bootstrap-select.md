@@ -1,4 +1,4 @@
-# bootstrap-select（基于bootstrap的下拉选框） API翻译
+# bootstrap-select（基于bootstrap的下拉选框） [API翻译](http://silviomoreto.github.io/bootstrap-select/options/)
 
 |Name|Type|默认值|描述|
 |:---:|:----:|:----:|:----|

@@ -1,0 +1,13 @@
+```
+        $(b).on("click",dom,function(){
+            //操作一
+        });
+        $(a).on("click",function(){
+            if(b.dom.click){
+                b.dom.click();
+                //操作二
+            }else{
+                //操作二
+            }
+         }); 
+```
