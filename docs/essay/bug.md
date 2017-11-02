@@ -19,3 +19,9 @@
 
 - 原因：当一个inline-block元素被设置overflow非visible属性值后，其baseline将被强制修改为元素下外边沿。
 - 解决：1.为inline-block元素添加 `vertical-align:bottom|middle`；2.将inline-block设为`block`。
+
+--- 
+
+#### 3. 对于UEditor视频上传后，重新读把内容放在编辑器编辑/预览，video的src为unknown的情况
+[帖子](http://bbs.csdn.net/topics/391963518)
+ueditor.config.js 365hang ,`whiteList`拼错了
