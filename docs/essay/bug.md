@@ -25,3 +25,6 @@
 #### 3. 对于UEditor视频上传后，重新读把内容放在编辑器编辑/预览，video的src为unknown的情况
 [帖子](http://bbs.csdn.net/topics/391963518)
 ueditor.config.js 365hang ,`whiteList`拼错了
+
+#### 4. UEditor常见问题
+[链接](http://ueditor.baidu.com/website/helper.html)
