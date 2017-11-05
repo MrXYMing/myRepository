@@ -7,7 +7,7 @@
 
 #### 1. CSS
 
-- [CSS揭秘](docs/notes/CSS/CSS_SECRETS.md)
+- [CSS揭秘](docs/notes/CSS/CSS揭秘.md)
 
 #### 2. JavaScript
 
