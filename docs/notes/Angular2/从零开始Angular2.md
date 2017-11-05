@@ -64,3 +64,35 @@ xx.component.ts
 - 注入器是本机制的核心：1. 注入器负责维护一个容器，用于存放他创建过的服务实力；2. 注入器能使用提供商创建一个新的服务实例。
 - 提供商是一个用于创建服务的配方。
 - 把提供商注册到注入器。
+
+### 二、[词汇表](https://angular.cn/guide/glossary)
+
+#### 装饰器（decorator|decoration）
+装饰器是要给函数，它将元数据添加到类、类成员（属性、方法）和函数参数。
+
+要想应用装饰器，把它放到被装饰对象的上面或左边。
+
+```
+@Component({
+  selector: 's-project',
+  templateUrl: './project.component.html',
+  styleUrls: ['./project.component.scss']
+})
+export class AppComponent {
+  constructor(@Inject('SpecialFoo') public foo:Foo) {}
+  @Input() name:string;
+}
+```
+
+用@Component装饰器来讲一个类标记为Angular组件，并将@Input装饰器来应用到组件的name属性。@Component装饰器中的参数对象包含与组件有关的元数据。
+
+装饰器的作用域会被限制在它所装饰的语言特性，在同一文件中，装饰器不会泄露到他后面的其他类。
+
+#### 指令（directive）
+指令是一个angular类，负责创建和重塑浏览器DOM中的html元素，并与之互动。指令是Angular中最基本的特性之一。
+
+指令分为三类：
+1. 组件（component）：用于组合程序逻辑和HTML模板，渲染出应用程序的视图。
+2. 属性型指令（attribute directive）：可以监控和修改其他HTML元素、HTML属性（attribute）、DOM属性（property）、组件等行为等等。他们通常表示为HTML属性。
+3. 结构型指令（structural directive）：负责塑造或重塑HTML布局，一般是通过添加、删除或操作HTML元素及其子元素来实现的。
+
