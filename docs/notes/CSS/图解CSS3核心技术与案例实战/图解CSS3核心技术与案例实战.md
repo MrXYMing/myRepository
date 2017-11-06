@@ -93,3 +93,40 @@ IE6~8,仅支持单冒号表示法，CSS3使用双冒号与单冒号来区分伪�
 7. E[attr$=val] 选择匹配元素E，且E元素定义了属性attr，其属性值以val结尾的任何字符串;
 
 *PS： `^`：匹配起始符； `$`：匹配终止符； `*`：匹配任意字符。支持IE7*
+
+---
+
+# 第三章 CSS3边框
+### 3.1 CSS3边框简介
+#### 3.1.1 基本属性
+- border-width：默认值“medium”（3~4px）;
+- border-style：默认none；
+- border-color: 默认字体的颜色；
+
+![border-style](imgs/border-style.png)
+但各浏览器均有差异
+
+#### 3.2 CSS3边框颜色属性
+CSS3在语法上做了一定修改：border-color: [ <color> | transparent ]{1,4} | inherit；
+但是如果使用border-color这种缩写语法，将不会有任何效果，必须将这个border-color标准写法拆分成四个边框，使用多颜色才会有效果：
+border-top-colors: [ <color> | transparent ]{1,4} | inherit；
+*属性中是`colors`；为了让不同浏览器都能渲染，需要加前缀：其中，KHTML引擎内核是 `-khtml`*
+
+当boder-color设置了n个颜色，并且边框宽度也为n像素，就可以每种颜色显示1像素的宽度。如果宽度值大于颜色数量的值，最后一种颜色用于显示剩下的宽度。
+
+目前仅firefox3.0及以上支持
+
+#### 3.3 CSS3图片边框属性
+基本语法：
+border-image: none | <image> [<number> | <percentage>] {1,4} [/ <border-width>{1,4}] ?[stretch | repeat | round] {0,2}
+
+- none: 默认值，表示边框无背景图片
+- <image>：设置背景图片，这跟background-image一样，可以使用绝对或相对的URL地址，来制定边框的背景图片；
+- <number>：number是一个数值，用来设置边框或者边框背景图片的大小，其单位是像素，可以使用1~4个值，表示4个方位的值；
+- <percentage>：percentage也是用来设置边框或者边框背景图片的大小，跟number不同之处是，percentage使用的是百分比；
+- stretch、repeat、round：这三个属性参数是用来设置边框背景图片的铺放方式，类似于background-position，其中stretch会拉伸边框背景图片、repeat是会重复边框背景图片、round是平铺边框背景图片，其中stretch为默认值。
+
+
+#### 3.4 CSS3圆角边框属性
+
+#### 3.5 CSS3盒子阴影属性

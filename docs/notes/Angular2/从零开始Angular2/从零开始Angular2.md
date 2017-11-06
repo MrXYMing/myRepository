@@ -96,3 +96,144 @@ export class AppComponent {
 2. 属性型指令（attribute directive）：可以监控和修改其他HTML元素、HTML属性（attribute）、DOM属性（property）、组件等行为等等。他们通常表示为HTML属性。
 3. 结构型指令（structural directive）：负责塑造或重塑HTML布局，一般是通过添加、删除或操作HTML元素及其子元素来实现的。
 
+### 核心知识
+#### 模板与数据绑定
+##### 组件交互
+##### 1.通过setter截听输入属性值的变化
+使用一个输入属性的setter，以拦截父组件中值的变化，并采取行动。
+```
+private _name='';
+@Input()
+set name(name:string){
+  this._name = (name && name.trim()) || '<no name set>';
+}
+get name():string{return this._namel;}
+```
+
+##### 2.通过ngOnChanges（）来截听输入属性值的变化
+当需要监视多个、交互式输入属性的时候，本方法比属性的setter更合适。
+
+知识点：`SimpleChange`
+
+##### 3.父组件监听子组件的事件
+子组件暴露一个`EventEmitter`属性，当事件发生时，子组件利用该属性`emits`（向上弹射）事件。父组件绑定到这个事件属性，并在事件发生时做出回应。
+
+子组件的`EventEmitter`属性是一个输出属性，通常带有`@Output装饰器`。
+
+父组件绑定一个事件处理器，用来响应子组件的事件并更新。
+```
+app-voter
+
+
+    import { Component, EventEmitter, Input, Output } from '@angular/core';
+     
+    @Component({
+      selector: 'app-voter',
+      template: `
+        <h4>{{name}}</h4>
+        <button (click)="vote(true)"  [disabled]="voted">Agree</button>
+        <button (click)="vote(false)" [disabled]="voted">Disagree</button>
+      `
+    })
+    export class VoterComponent {
+      @Input()  name: string;
+      @Output() onVoted = new EventEmitter<boolean>();
+      voted = false;
+     
+      vote(agreed: boolean) {
+        this.onVoted.emit(agreed);
+        this.voted = true;
+      }
+    }
+
+
+app-vote-taker
+
+
+    import { Component }      from '@angular/core';
+     
+    @Component({
+      selector: 'app-vote-taker',
+      template: `
+        <h2>Should mankind colonize the Universe?</h2>
+        <h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+        <app-voter *ngFor="let voter of voters"
+          [name]="voter"
+          (onVoted)="onVoted($event)">
+        </app-voter>
+      `
+    })
+    export class VoteTakerComponent {
+      agreed = 0;
+      disagreed = 0;
+      voters = ['Mr. IQ', 'Ms. Universe', 'Bombasto'];
+     
+      onVoted(agreed: boolean) {
+        agreed ? this.agreed++ : this.disagreed++;
+      }
+    }
+```
+
+##### 4.父组件与子组件通过本地变量互动
+父组件不能使用数据绑定来读取子组件的属性或调用子组件的方法。但可以在父组件模板里，新建一个本地变量来代表子组件，然后利用这个变量来读取子组件的属性和调用子组件的方法。
+```
+app-countdown-timer
+
+  seconds = 11;
+  start() { this.countDown(); }
+  stop()  {
+    this.clearTimer();
+    this.message = `Holding at T-${this.seconds} seconds`;
+  }
+ 
+  private countDown() {
+    ...
+  }
+
+
+app-countdown-parent-lv
+
+  <button (click)="timer.start()">Start</button>
+  <button (click)="timer.stop()">Stop</button>
+  <div class="seconds">{{timer.seconds}}</div>
+  <app-countdown-timer #timer></app-countdown-timer>
+```
+
+有一定局限性，因为父组件-子组件的连接必须全部在父组件的模板中进行，父组件本身的代码对子组件没有访问权。
+
+##### 5.父组件调用@ViewChild()
+当父组件类需要读取子组件的属性值或调用子组件的方法，可以把子组件作为ViewChild，注入到父组件里面。
+```
+    import { AfterViewInit, ViewChild } from '@angular/core';
+    import { Component }                from '@angular/core';
+    import { CountdownTimerComponent }  from './countdown-timer.component';
+     
+    @Component({
+      selector: 'app-countdown-parent-vc',
+      template: `
+      <h3>Countdown to Liftoff (via ViewChild)</h3>
+      <button (click)="start()">Start</button>
+      <button (click)="stop()">Stop</button>
+      <div class="seconds">{{ seconds() }}</div>
+      <app-countdown-timer></app-countdown-timer>
+      `,
+      styleUrls: ['../assets/demo.css']
+    })
+    export class CountdownViewChildParentComponent implements AfterViewInit {
+     
+      @ViewChild(CountdownTimerComponent)
+      private timerComponent: CountdownTimerComponent;
+     
+      seconds() { return 0; }
+     
+      ngAfterViewInit() {
+        setTimeout(() => this.seconds = () => this.timerComponent.seconds, 0);
+      }
+     
+      start() { this.timerComponent.start(); }
+      stop() { this.timerComponent.stop(); }
+    }
+```
+首先，使用ViewChild装饰器导入这个引用；然后，通过@ViewChild属性装饰器，将子组件CountdownTimerComponent注入到私有属性timerComponent里面。
+
+##### 6.父组件和子组件通过服务来通讯
