@@ -1,13 +1,2 @@
-```
-        $(b).on("click",dom,function(){
-            //操作一
-        });
-        $(a).on("click",function(){
-            if(b.dom.click){
-                b.dom.click();
-                //操作二
-            }else{
-                //操作二
-            }
-         }); 
-```
+1. 做一个html5小游戏的网站（基于node）
+2. 做一个自制简历的网站（基于node）

@@ -237,3 +237,19 @@ app-countdown-parent-lv
 首先，使用ViewChild装饰器导入这个引用；然后，通过@ViewChild属性装饰器，将子组件CountdownTimerComponent注入到私有属性timerComponent里面。
 
 ##### 6.父组件和子组件通过服务来通讯
+
+
+##### 组件样式
+:host选择器：用来选择宿主元素中的元素；这是以宿主元素为目标的唯一方式，因为宿主不是组件自身模板的一部分，而是父组件模板的一部分。
+
+:host-context选择器：在但当前组件宿主元素的`祖先节点`中查找CSS类，直到文档的根节点为止。
+```
+:host-context(.theme-light) h2 {
+  background-color: #eef;
+}
+只有当某个祖先元素有 CSS 类theme-light时，我们才会把background-color样式应用到组件内部的所有<h2>元素中。
+```
+
+
+##### 动态组件
+动态组件加载器 ComponentFactoryResolver
