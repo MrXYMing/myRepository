@@ -47,3 +47,7 @@ border：
     3. rgb_number:规定颜色值为 rgb 代码的边框颜色（比如 rgb(255,0,0)）;
     4. transparent:默认值。边框颜色为透明;
     5. inherit:规定应该从父元素继承边框颜色;
+
+
+#### 研究下不同浏览器的 line-height
+

@@ -36,3 +36,8 @@ ps: git log -p -2 # 查看最近两次详细修改内容的diff
 6. 删除分支：`git branch -d <name>`
 
 *ps：*本地新建一个分支后，必须要做远程分支关联：`git push --set-upstream origin <name>`
+
+#### git本地合分支，要求输信息时
+1. 按`esc`退出编译模式；
+2. 输入`:`；进入命令模式；
+3. 输入`wq`完成

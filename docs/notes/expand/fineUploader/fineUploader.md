@@ -98,6 +98,8 @@ callbacks: {
     3. errorReason：当前错误的原因 - `string`；
     4. xhr：用于发出请求的对象 - `XMLHttpRequest or XDomainRequest`；
 
+    *处理错误：Fine Uploader有很多方式来回应错误信息。 默认情况下，当服务器响应没有将成功的密钥设置为true时，Fine Uploader会出现错误。 如果发生任何错误，则会调用onError回调*
+
 - **onManualRetry**：在每次手动重试尝试之前调用。返回false以防止这个和所有将来的重试尝试在关联的项目上
     1. id：当前文件的ID - `integer`；
     2. name：当前文件的名称 - `string`；
