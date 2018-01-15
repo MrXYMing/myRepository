@@ -109,3 +109,5 @@
 - [x]toolbar-list
 - [x]toolbar-group
 - [x]tree
+
+#### 2018.1.3 dialog内部页拿取宽高时会有一个突变的过程，之后需要加一个isread的状态来控制 dialog的显示与否，里面内容确定宽高后再显示。

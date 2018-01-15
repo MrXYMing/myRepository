@@ -41,3 +41,4 @@ ps: git log -p -2 # 查看最近两次详细修改内容的diff
 1. 按`esc`退出编译模式；
 2. 输入`:`；进入命令模式；
 3. 输入`wq`完成
+--set-upstream-to=origin/<branch> login

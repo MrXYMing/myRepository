@@ -1,8 +1,9 @@
-# ngx-perfect-scrollbar（基于angular的滚动条） [API翻译](https://github.com/zefoy/ngx-perfect-scrollbar)
+# 一、ngx-perfect-scrollbar（基于angular的滚动条） [原API](https://github.com/zefoy/ngx-perfect-scrollbar)
 
-### COMPONENT USAGE（组件的使用）
+### 1.COMPONENT USAGE（使用组件的方式）
 
 - 例子
+
 ```
 <perfect-scrollbar class="container" [config]="config">
   <div class="content">Scrollable content</div>
@@ -20,9 +21,10 @@
 |[scrollIndicators] | 启用渐消边缘滚动显示 |
 |(< ps-event-name>) | 所有的事件绑定 |
 
-### DIRECTIVE USAGE（指令的使用）
+### 2.DIRECTIVE USAGE（使用指令的方式）
 
 - 例子
+
 ```
 @import '~perfect-scrollbar/css/perfect-scrollbar.css';
 
@@ -39,7 +41,7 @@
 |[psPosStyle]       | 位置style(控制滚动条的位置) |
 |(< ps-event-name>) | 所有的事件绑定 |
 
-### Available configuration options (custom / global configuration): (可用配置选项（自定义/全局配置）：)
+### 3.Available configuration options (custom / global configuration): (可用配置选项（自定义/全局配置）：)
 
 |Name                    |    描述    |
 |:---:|:----:|
@@ -55,17 +57,26 @@
 |scrollYMarginOffset     | Y轴上的偏移量（默认：0） |
 |stopPropagationOnClick  | 停止点击事件的传播（默认：true） |
 
-### Available control / helper functions (provided by the directive): (可用的控制/辅助函数（由指令提供）)
+### 4.Available control / helper functions (provided by the directive): (可用的控制/辅助函数（由指令提供）)
 
 |Name                              |    描述    |
 |:---:|:----:|
+|ps()                              | 返回对ps实例的引用|
 |update()                          | 更新滚动条的大小和位置|
 |geometry(property)                | 返回指定属性的几何图形 |
 |scrollable(direction)             | 检查给出的方向滚动,Direction can be: 'any','both','x','y' |
-|scrollTo(x, y, speed)             |  |
-|scrollToY(position, speed)        |  |
-|scrollToX(position, speed)        |  |
-|scrollToTop(offset, speed)        |  |
-|scrollToLeft(offset, speed)       |  |
-|scrollToRight(offset, speed)      |  |
-|scrollToBottom(offset, speed)     |  |
+|scrollTo(x, y, speed)             | 滚动条移动到指定的横纵坐标(x,y) |
+|scrollToY(position, speed)        | 滚动条移动到指定的纵坐标 |
+|scrollToX(position, speed)        | 滚动条移动到指定的横坐标 |
+|scrollToTop(offset, speed)        | 滚动条移动到最顶部 |
+|scrollToLeft(offset, speed)       | 滚动条移动到最左边 |
+|scrollToRight(offset, speed)      | 滚动条移动到最右边 |
+|scrollToBottom(offset, speed)     | 滚动条移动到最底部 |
+
+# 二、使用说明
+
+参照demo源码中的使用方法即可。
+
+[demo](https://zefoy.github.io/ngx-perfect-scrollbar/)
+
+[源码](https://github.com/zefoy/ngx-perfect-scrollbar/tree/master/example/src/app)
