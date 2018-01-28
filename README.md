@@ -7,11 +7,11 @@
 
 - [Bootstrap入门](docs/notes/CSS/Bootstrap入门/Bootstrap入门.md)
 
-- [Scss](docs/notes/CSS/Scss/sass入门.md)
+- [sass入门](docs/notes/CSS/Scss/sass入门.md)
 
-- [Scss](docs/notes/CSS/Scss/使用技巧.md)
+- [Scss使用技巧](docs/notes/CSS/Scss/使用技巧.md)
 
-- [SCSS文档结构出版设计](docs/idea/SCSS文档结构.xmind)
+- [SCSS文档结构初版设计](docs/idea/SCSS文档结构.xmind)
 
 #### 2. JavaScript
 
