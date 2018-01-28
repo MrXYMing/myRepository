@@ -39,6 +39,8 @@
 
 - [阁下何不同风起，扶摇直上九万里](docs/essay(杂记)/skill.md)
 
+- [bug不可怕，可怕的是不带脑子的找](docs/essay(杂记)/前端调试技巧.md)
+
 - [git是个好东西](docs/essay(杂记)/git.md)
 
 - [愿你我共勉](docs/essay(杂记)/被不动脑子的猪队友逼疯之后的前端规范产物.md)
