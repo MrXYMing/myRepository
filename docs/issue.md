@@ -111,3 +111,36 @@
 - [x]tree
 
 #### 2018.1.3 dialog内部页拿取宽高时会有一个突变的过程，之后需要加一个isread的状态来控制 dialog的显示与否，里面内容确定宽高后再显示。
+
+
+
+#### 2018.02.05
+
+1. [ ]text-box: 报错提示未实现规范，目前需严格按照上下间隔16px的规范；
+2. [ ]#222 多级选择控件&&dialogTextbox；
+3. [ ]#107 项目管理，暂时只需要调整UI，操作上可以先不予考虑；
+4. [ ]toolbar，
+    - [ ]字数过多时，出现省略号，用户体验欠佳；建议先简化说明文字；
+    - [ ]toolbar个数过多时，会换行，考虑是否提供滚动条；或者是toolbar整体全部按比例缩小；
+5. [ ]btn-group，选中时hover时颜色不应改变；按照规范修改样式；
+6. [ ]header下拉框高度调小；
+7. [ ]查询分析器UI；
+8. [x]devpart编辑中，
+    - [x]state的layout选择在流程上可能会产生歧义，UI上建议layout区域和addnew区域互换位置；
+    - [x]sourceCode的action选择区域高度太低，UI上建议item高度保持和header高度一致，选择区域高度自适应。
+
+
+#### 2018.02.06
+
+1. [x]grid左右边距 48px；
+2. [x]button的padding调整为 6px,6px；
+3. [x]datepicker初始值由new Date()改为 null；用户不选择时，返回null；日期模式时，时/分/秒均置为 00 ；
+4. [ ]devpart中禁用centerlayout时，没有初始选中值；
+
+
+#### 2018.02.06 chartPart疑点
+
+1. GroupFieldsInLabel的用途？是不是就是echarts中的xAxis？  --- 用该值替换xAxis，用作显示
+2. TittleImage是给抬头设置一张图片？
+3. 详细设置都是用户输入吗
+4. 设置详细页，是做一个chart的demo页吗？                    --- 点击柱状图或是其他图中的某个选项，用grid显示该项的详细

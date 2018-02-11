@@ -1,3 +1,4 @@
+/*第一章 2*/
 .n1-2-start{
     padding:6px 16px;
     border:1px solid #446d88;
@@ -39,3 +40,29 @@
 .n1-2-color.ok{
     background-color: #6b0;
 }
+
+/*background-clip属性demo*/
+.background-clip {
+    border: 5px navy;
+    border-style: dotted double;
+    margin: 1em;
+    padding: 2em;
+    background: #F8D575;
+ }
+ .border-box { background-clip: border-box; }
+ .padding-box { background-clip: padding-box; }
+ .content-box { background-clip: content-box; }
+ .text { background-clip: text; }
+/**/
+ .s-1-plan{
+    padding: 2em;
+    /* 旧语法，带前缀并且已经废弃，以支持老版本的浏览器 */
+    background: -prefix-linear-gradient(left, #000, white); 
+    /* 新语法，不带前缀，以支持标准兼容的浏览器（Opera 12.1， IE 10， Firefox 16， Chrome 26， Safari 6.1） */
+    background: linear-gradient(to right,#000, white); 
+ }
+ .s-1-plan p{
+     border:10px solid hsla(0,0%,100%,.5);
+     background: white;
+     background-clip: padding-box;
+ }

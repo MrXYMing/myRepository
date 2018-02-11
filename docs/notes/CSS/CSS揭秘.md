@@ -1,12 +1,12 @@
 ### CSS揭秘
 
-#### 一、CSS编码技巧
-##### 尽量减少改动时要编辑的地方
-##### 1. em rem
+### 一、CSS编码技巧
+#### 尽量减少改动时要编辑的地方
+#### 1. em rem
 - em:相对长度单位，相对于当前对象内文本的字体尺寸；
 - rem：css3新增的相对但对，只相对于html跟元素。
 
-##### 2. [例子](../../demo/CSS_SECRETS/index.html#n1-2)
+#### 2. [例子](../../demo/CSS_SECRETS/index.html#n1-2)
 初始样式设计：
 ```
 .n1-2-start{
@@ -63,3 +63,31 @@
     background-color: #6b0;
 }
 ```
+
+---
+
+### 第二章 背景与边框
+
+#### 1.半透明边框
+
+- 半透明颜色:rgba(),hsla();
+
+    1. [grba(R,G,B,A)](http://www.css88.com/book/css/values/color/rgba.htm):
+        - R：红色值。正整数 | 百分数
+        - G：绿色值。正整数 | 百分数
+        - B：蓝色值。正整数 | 百分数
+        - A：Alpha透明度。取值0~1之间。
+    2. [hsla](H,S,L,A)(http://www.css88.com/book/css/values/color/hsla.htm)
+        - H：Hue(色调)。0(或360)表示红色，120表示绿色，240表示蓝色，也可取其他数值来指定颜色。取值为：0 - 360
+        - S：Saturation(饱和度)。取值为：0.0% - 100.0%
+        - L：Lightness(亮度)。取值为：0.0% - 100.0%
+        - A：Alpha透明度。取值0~1之间。
+
+- [background-clip:padding-box;](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-clip)
+
+    1. border-box: 背景延伸到边框外沿（但是在边框之下）;
+    2. padding-box: 边框下面没有背景，即背景延伸到内边距外沿;
+    3. content-box: 背景裁剪到内容区 (content-box) 外沿;
+    4. text: 背景被裁剪为文字的前景色。
+
+    *注意：兼容到ie9+，不继承属性*
