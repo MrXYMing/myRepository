@@ -7,6 +7,7 @@
 - program：程序；计划；大纲；用程序指令；编程序。
 
 - prototype：原型；标准；模范。
+- property：属性
 
 - transparent：透明的；显然的；坦率的；易懂的。
 
@@ -78,3 +79,19 @@
 - finite：有限；
 
 - render：渲染；
+
+- dynamic：动态；
+
+- virtual：虚拟；
+- Virtual DOM：虚拟DOM；
+
+- Hybrid App：混合模式移动应用；
+- hybrid：混合的、杂种的；杂种、混合物；
+
+- general：一般、普通、概括；
+
+- comments：注释；
+
+- Exceptions：异常；
+
+-Best Practices：最佳实践
