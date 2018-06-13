@@ -11,8 +11,6 @@
 
 - [Scss使用技巧](docs/notes/CSS/Scss/使用技巧.md)
 
-- [SCSS文档结构初版设计](docs/idea/SCSS文档结构.xmind)
-
 #### 2. JavaScript
 
 - [Date](docs/notes/JavaScript/developer.mozilla.org/参考文档/标准库(内置对象)/Date.md)
