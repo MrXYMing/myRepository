@@ -98,3 +98,7 @@
 
 - exclude：排除、排斥、拒绝；
 - include：包括、包含、收录、算；
+
+- specified：规定，提起;
+
+- normalize：正常化；
