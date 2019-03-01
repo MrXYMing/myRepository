@@ -7,3 +7,7 @@
 ## 页面代码高亮
 
 [地址](https://highlightjs.org/usage/)
+
+## angular内跳转至组件定义
+
+vscode 拓展 `Angular Follow Selector`
