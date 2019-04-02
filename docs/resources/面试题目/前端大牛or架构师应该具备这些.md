@@ -175,6 +175,12 @@ const adapterData = arr2objAdapter(arr);
 
 #### 1.研究过ng、react、vue的一种或以上，知道其原理
 
+- 三者的区别？为什么选择angular？
+
+[怎样在vue，angular，react快速选择一个合适的框架](https://blog.csdn.net/weixin_41879988/article/details/81638474)
+
+beflamNext是一个用于开发tms、wms应用的平台，它是一个比较大型的项目。我们选中angular正好就是看中了它对大型项目的良好支持。react、vue是更关注view层的库，他们需要搭配其他库才可以构建一个大型项目。而angular是一整套解决方案的框架，它拥有良好的项目结构，model、view、controller天然分层，html、css、js也天然分层，结构清晰，在开发和维护上可以减少很多不必要的麻烦；同时它有一套完整的构建工具（Angular-CLI），创建、运行、编译、打包都非常快捷，不用在去配合其他构建工具；默认支持ts，它是支持ES6的，同时我们可以很好的做到类型检测。
+
 **Angular**
 
 1. MVVM设计模式；
