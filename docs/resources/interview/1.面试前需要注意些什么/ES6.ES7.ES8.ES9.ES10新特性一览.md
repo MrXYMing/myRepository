@@ -419,7 +419,7 @@ console.log(student);//{name: "Ming", age: "18", city: "Shanghai"}
 //对象中直接写变量，非常简洁。
 ```
 
-#### 9.Promise
+#### 9.[Promise](http://es6.ruanyifeng.com/#docs/promise)
 
 Promise 是异步编程的一种解决方案，比传统的解决方案callback更加的优雅。它最早由社区提出和实现的，ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象。
 
@@ -456,6 +456,98 @@ waitSecond
     });
 
 //上面的的代码使用两个then来进行异步编程串行化，避免了回调地狱：
+```
+
+```js
+//异步加载图片的例子
+function loadImageAsync(url) {
+  return new Promise(function(resolve, reject) {
+    const image = new Image();
+
+    image.onload = function() {
+      resolve(image);
+    };
+
+    image.onerror = function() {
+      reject(new Error('Could not load image at ' + url));
+    };
+
+    image.src = url;
+  });
+}
+//上面代码中，使用Promise包装了一个图片加载的异步操作。如果加载成功，就调用resolve方法，否则就调用reject方法。
+```
+
+```js
+//用Promise对象实现的 Ajax 操作的例子
+const getJSON = function(url) {
+  const promise = new Promise(function(resolve, reject){
+    const handler = function() {
+      if (this.readyState !== 4) {
+        return;
+      }
+      if (this.status === 200) {
+        resolve(this.response);
+      } else {
+        reject(new Error(this.statusText));
+      }
+    };
+    const client = new XMLHttpRequest();
+    client.open("GET", url);
+    client.onreadystatechange = handler;
+    client.responseType = "json";
+    client.setRequestHeader("Accept", "application/json");
+    client.send();
+
+  });
+
+  return promise;
+};
+
+getJSON("/posts.json").then(function(json) {
+  console.log('Contents: ' + json);
+}, function(error) {
+  console.error('出错了', error);
+});
+```
+
+`Promise.prototype.catch`方法是.then(null, rejection)或.then(undefined, rejection)的别名，用于指定发生错误时的回调函数。
+
+```js
+const promise = new Promise(function(resolve, reject) {
+  reject(new Error('test'));
+});
+promise.catch(function(error) {
+  console.log(error);
+});
+
+//等价于
+const promise = new Promise(function(resolve, reject) {
+  throw new Error('test');
+});
+promise.catch(function(error) {
+  console.log(error);
+});
+// Error: test
+```
+
+ES2018引入`Promise.prototype.finally()`：finally方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。
+
+```js
+promise
+.then(result => {···})
+.catch(error => {···})
+.finally(() => {···});
+
+//服务器使用 Promise 处理请求，然后使用finally方法关掉服务器。
+server.listen(port)
+  .then(function () {
+    // ...
+  })
+  .finally(function(){
+    server.stop;
+  });
+//finally方法的回调函数不接受任何参数，这意味着没有办法知道，前面的 Promise 状态到底是fulfilled还是rejected。这表明，finally方法里面的操作，应该是与状态无关的，不依赖于 Promise 的执行结果。
 ```
 
 #### 10.支持let与const
